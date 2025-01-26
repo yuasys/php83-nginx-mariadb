@@ -18,8 +18,13 @@
    ```
 
 2. **docker composeで立ち上げる。**  
-   ダウンロードしたプロジェクトを使って、必要なプログラム（コンテナと呼ばれる）を自動的に起動します。
-   ```
+   ダウンロードしたプロジェクトを使って、必要なプログラム（コンテナと呼ばれる）を自動的に起動します。  
+
+   📍前提 アプリ「Docker Desktop」が起動していることが必要です。  
+   ※ Macに限られますが、従来の「Docker Desktop」に代わる代替アプリとして「OrbStack」があります。  
+   📍「[OrbStack](https://orbstack.dev/)（オーブスタック）」は、超軽量・高速性能が注目されています。
+
+   ```zsh:zsh
    cd php83-nginx-mariadb
    docker compose up -d
    ```
