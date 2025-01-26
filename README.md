@@ -7,6 +7,8 @@
 ![docker-compose](https://img.shields.io/badge/docker--compose-1.29-blue.svg)
 
 
+📌このリポジトリはオリジナルのリポジトリからフォークしたものです。従って、時折[フォーク元](https://github.com/sho55/php83-nginx-mariadb)を確認することを推奨します。
+
 # Laravelプロジェクトの作成方法
 
 1. **cloneする。**  
