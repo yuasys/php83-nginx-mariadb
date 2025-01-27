@@ -122,10 +122,13 @@ root@0a88bc8e521f:/var/www# php artisan breeze:install react
 ```
 **10.1 Inertiaの実装を確認する**
 
-   1. VSCodeで⌘+pでファイルapp.blade.phpを検索する
-   2. app.blade.phpファイルの中に下記の行があることを確認する
-   ```html
-           <!-- Scripts -->
+   1. VSCodeで⌘+p（⌘とｐキーの同時押し）でファイルapp.blade.phpを検索する  
+      📍my-app/resource/views/ディレクトリに見つかるので、該当行をクリックして開く
+      
+   3. my-app/resource/views/app.blade.phpファイルの中に下記の行があることを確認する
+
+   ```php
+         (略）
         @routes
         @viteReactRefresh
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
@@ -134,11 +137,12 @@ root@0a88bc8e521f:/var/www# php artisan breeze:install react
       <body class="font-sans antialiased">
         @inertia
       </body>
+      （略）
    ```
-   3. myapp/resources/js/Pages/Sample.jsxファイルを作成する
-   ```js
+   3. my-app/resources/js/Pages/Sample.jsxファイルを作成する
+   ```jsx
       import { useEffect } from 'react';
-
+      
       const Sample = () => {
          useEffect(() => {
             console.log('Component mounted');
@@ -146,11 +150,28 @@ root@0a88bc8e521f:/var/www# php artisan breeze:install react
                console.log('Component unmounted');
             };
          }, []);
-
-         return <div>これはサンプルです</div>;
+      
+         return (
+            <>
+            <div className='flex justify-center items-center h-screen bg-gray-300'>
+               <div className="p-4 flex flex-col justify-center items-center bg-white shadow-lg">
+                  <h1 className="text-2xl font-bold text-green-800">これはサンプルです</h1>
+                  <p className='text-pink-500 text-lg font-bold'>バッチリ、tailwindcssが使えてるよ！</p>
+               </div>
+            </div>
+            </>
+         )
       }
       export default Sample;
    ```
+   4. my-app/routes/web.phpを編集
+      27行目に下記コードを挿入
+   ```php
+   Route::get('/sample', function () {
+    return Inertia::render('Sample');
+   })->name('sample');
+   ```
+
 
 **10.2 vite設定ファイルmy-app/vite.config.jsを整える**
 
