@@ -93,5 +93,8 @@ $ 文字コード
 - + LOG_CHANNEL=daily
 ```
 
+9. **ブラウザで確認する**
 
-設定ファイル（docker-compose.yml）変更前
+[localhost:81](http://localhost:81/)
+
+![初期画面](https://github.com/yuasys/php83-nginx-mariadb/blob/main/my-app/public/images/2025-01-27%2010-39-52.png?raw=true)
