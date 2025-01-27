@@ -69,3 +69,6 @@
    ```
    docker compose up -d
    ```
+8. **ブラウザで確認する**
+
+設定ファイル（docker-compose.yml）変更前
