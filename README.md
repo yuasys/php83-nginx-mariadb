@@ -80,6 +80,10 @@
 - - APP_TIMEZONE=UTC
 + - APP_TIMEZONE=Asia/Tokyo
 
+# アプリのurl
+- - AAPP_URL=http://localhost
++ - APP_URL=http://localhost:81
+
 $ 文字コード
 - - APP_LOCALE=en
 - - APP_FALLBACK_LOCALE=en
@@ -98,3 +102,57 @@ $ 文字コード
 [localhost:81](http://localhost:81/)
 
 ![初期画面](https://github.com/yuasys/php83-nginx-mariadb/blob/main/my-app/public/images/2025-01-27%2010-39-52.png?raw=true)
+
+
+10. **Inertia（イナーシャ）のセットアップによる認証機能の実装**
+
+Inertiaのもともとの意味；Inertia ＝　慣性  
+詳しいセットアップ方法は[この動画](https://www.youtube.com/watch?v=humnThHNjLU&t=1201s)を参照する。
+
+``` bash
+# 下記コマンドでコンテナの中に入ってコマンド操作をやれるようにする
+docker exec -it myapp-php bash
+
+# コンテナmyapp-phpの中で下記コマンドを打つ
+root@0a88bc8e521f:/var/www# composer require laravel/breeze --dev
+
+# 続けて下記コマンドでreactを使うことを宣言する
+root@0a88bc8e521f:/var/www# php artisan breeze:install react
+
+```
+**10.1 Inertiaの実装を確認する**
+
+   1. VSCodeで⌘+pでファイルapp.blade.phpを検索する
+   2. app.blade.phpファイルの中に下記の行があることを確認する
+   ```html
+           <!-- Scripts -->
+        @routes
+        @viteReactRefresh
+        @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
+        @inertiaHead
+      </head>
+      <body class="font-sans antialiased">
+        @inertia
+      </body>
+   ```
+   3. myapp/resources/js/Pages/Sample.jsxファイルを作成する
+   ```js
+      import { useEffect } from 'react';
+
+      const Sample = () => {
+         useEffect(() => {
+            console.log('Component mounted');
+            return () => {
+               console.log('Component unmounted');
+            };
+         }, []);
+
+         return <div>これはサンプルです</div>;
+      }
+      export default Sample;
+   ```
+
+**10.2 vite設定ファイルmy-app/vite.config.jsを整える**
+
+
+
