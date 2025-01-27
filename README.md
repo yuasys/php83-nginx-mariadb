@@ -69,6 +69,29 @@
    ```
    docker compose up -d
    ```
-8. **ブラウザで確認する**
+8. **/my-app/.envファイルを修正する**
+
+```bash
+# アプリ名
+- - APP_NAME=Laravel
++ - APP_NAME=CoffeeReview
+
+# タイムゾーン
+- - APP_TIMEZONE=UTC
++ - APP_TIMEZONE=Asia/Tokyo
+
+$ 文字コード
+- - APP_LOCALE=en
+- - APP_FALLBACK_LOCALE=en
+- - APP_FAKER_LOCALE=en_US
+- + APP_LOCALE=ja
+- + APP_FALLBACK_LOCALE=ja
+- + APP_FAKER_LOCALE=ja_JP
+
+# ログの取得形式
+- - LOG_CHANNEL=stack
+- + LOG_CHANNEL=daily
+```
+
 
 設定ファイル（docker-compose.yml）変更前
