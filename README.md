@@ -5,9 +5,12 @@
 ![nginx](https://img.shields.io/badge/nginx-1.18-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-20.10-blue.svg)
 ![docker-compose](https://img.shields.io/badge/docker--compose-1.29-blue.svg)
+[![docker-compose](https://img.shields.io/badge/GNU/Linux-12-brightgreen.svg)](https://www.debian.org/doc/manuals/debian-reference/ch01.ja.html)
 
 
-📌このリポジトリはオリジナルのリポジトリからフォークしたものです。従って、時折[フォーク元](https://github.com/sho55/php83-nginx-mariadb)を確認することを推奨します。
+📌このリポジトリはオリジナルのリポジトリからフォークしたものです。従って、時折[フォーク元](https://github.com/sho55/php83-nginx-mariadb)を確認することを推奨します。  
+
+📌上のバッジ「GNU/Linux」をクリックすると何が起きるでしょう？
 
 # Laravelプロジェクトの作成方法
 
