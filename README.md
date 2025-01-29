@@ -1,4 +1,4 @@
-# 使用技術
+## 使用技術
 ![Laravel](https://img.shields.io/badge/Laravel-10-brightgreen.svg)
 ![PHP](https://img.shields.io/badge/PHP-8-blue.svg)
 ![MariaDB](https://img.shields.io/badge/MariaDB-10.4-blue.svg)
@@ -12,7 +12,7 @@
 
 📌上のバッジ「GNU/Linux」をクリックすると何が起きるでしょう？
 
-# Laravelプロジェクトの作成方法
+## Laravelプロジェクトの作成方法
 
 1. **cloneする。**  
    プロジェクトのコピーを自分のコンピュータにダウンロードします。
@@ -235,6 +235,8 @@ root@0a88bc8e521f:/var/www# php artisan breeze:install react
    ```
 
 **10.2 vite設定ファイルmy-app/vite.config.jsを整える**
+
+## データベースの設計
 
 ###  ER図の事例
 
